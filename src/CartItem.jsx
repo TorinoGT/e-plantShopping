@@ -22,7 +22,11 @@ const Cart = ({ onContinueShopping, onRemoveFromCart }) => {
     };
 
     const handleCheckoutShopping = (e) => {
+        if(calculateTotalAmount() > 0){
         alert('Thanks for shopping at Paradise Nursery!\n$' + calculateTotalAmount()  + ' has been deducted from your bank account.');
+        } else {
+            alert('Your cart is empty!');
+        }
     };
 
     const handleIncrement = (item) => {
